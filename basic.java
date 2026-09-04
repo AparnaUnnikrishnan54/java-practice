@@ -271,7 +271,7 @@ public class basic{
         scanner.close();
     }
 }
- */
+
 // ************************************************************
 //                  METHOD     
 // ************************************************************
@@ -292,5 +292,109 @@ public class basic{
     }
     static double square(double number){
         return number*number;
+    }
+}
+ 
+// ************************************************************
+//                  ARRAY    
+// ************************************************************
+import java.util.Scanner;
+public class basic {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+        System.out.print("Enter the size of array: ");
+        int size=scanner.nextInt();
+
+         // Taking input
+        int[] numArray=new int[size];
+        for (int i = 0; i < numArray.length; i++) {
+            System.out.print("Enter element"+(i+1)+": ");
+            numArray[i]=scanner.nextInt();
+        }
+
+        //displaying array
+        System.out.println("Array elements are:");
+        for (int n : numArray) {
+            System.out.print(n+", ");
+        }
+        // for (int i = 0; i < numArray.length; i++) {
+        //     System.out.print(numArray[i]+" ");
+        // }
+        scanner.close();
+    }
+}
+
+// ************************************************************
+//                  2D ARRAY    
+// ************************************************************
+
+import java.util.Scanner;
+
+public class basic {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter number of columns: ");
+        int columns = scanner.nextInt();
+
+        int[][] numbers = new int[rows][columns];
+
+        // Taking input
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < columns; j++) {
+                System.out.print("Enter number: ");
+                numbers[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Displaying 2D array using for loop
+        System.out.println("Array elements are:");
+        for(int i = 0; i < numbers.length; i++) {
+            for(int j = 0; j < numbers[i].length; j++) {
+                System.out.print(numbers[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Displaying array using for-each
+        // System.out.println("Array elements are:");
+        // for(int[] row : numbers) {
+        //     for(int number : row) {
+        //         System.out.print(number + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        scanner.close();
+    }
+}
+*/
+// ************************************************************
+//                  VARARGS   
+// ************************************************************
+public class basic {
+
+    public static void main(String[] args) {
+
+        add(10, 20);
+        add(10, 20, 30);
+        add(10, 20, 30, 40);
+    }
+
+    static void add(int... numbers) {
+
+        int sum = 0;
+
+        for (int number : numbers) {
+            sum += number;
+        }
+
+        System.out.println("Sum = " + sum);
     }
 }
